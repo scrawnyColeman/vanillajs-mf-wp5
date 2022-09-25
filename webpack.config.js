@@ -8,7 +8,7 @@ module.exports = (_, argv) => ({
     publicPath:
       argv.mode === "development"
         ? "http://localhost:8082/"
-        : "https://host-vanillajs.vercel.app/",
+        : "https://vanillajs-mf-wp5-qqyf.vercel.app/",
   },
   resolve: {
     extensions: [".ts", ".tsx", ".jsx", ".js", ".json"],
