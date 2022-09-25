@@ -3,17 +3,6 @@ const ModuleFederationPlugin = require("webpack/lib/container/ModuleFederationPl
 
 const deps = require("./package.json").dependencies;
 
-const getRemote = (mfe) => {
-  const remoteMap = {
-    react: "https://mfe-react-scrawnycoleman.vercel.app/",
-    vue: "https://mfe-vue-scrawnycoleman.vercel.app/",
-    svelte: "https://mfe-svelte-scrawnycoleman.vercel.app/",
-    solid: "https://mfe-solid-scrawnycoleman.vercel.app/",
-  };
-
-  return `${mfe}_mfe@${remoteMap[mfe]}remoteEntry.js`;
-};
-
 module.exports = (_, argv) => ({
   output: {
     publicPath:
@@ -49,10 +38,11 @@ module.exports = (_, argv) => ({
       name: "vanilla_host",
       filename: "remoteEntry.js",
       remotes: {
-        react: getRemote("react"),
-        vue: getRemote("vue"),
-        svelte: getRemote("svelte"),
-        solid: getRemote("solid"),
+        react: "react_mfe@https://react-mf-wp5-rk86.vercel.app/remoteEntry.js",
+        vue: "vue_mfe@https://vue-mf-wp5-w9qx.vercel.app/remoteEntry.js",
+        svelte:
+          "svelte_mfe@https://svelte-mf-wp5-hl92.vercel.app/remoteEntry.js",
+        solid: "solid_mfe@https://solid-mf-wp5-zyhb.vercel.app/remoteEntry.js",
       },
       exposes: {},
       shared: {
