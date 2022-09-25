@@ -1,9 +1,9 @@
 let count = 0;
 
-export default (id: string) => {
+export default (document: Document, id: string) => {
   // build wrapper and inn
   const wrapper = document.createElement("div");
-  wrapper.id = id;
+  wrapper.id = "vanilla";
   wrapper.classList.add("container");
 
   const element = document.createElement("div");
@@ -39,5 +39,5 @@ export default (id: string) => {
 
   wrapper.appendChild(element);
   element.appendChild(buttonElement);
-  document.getElementById("apps").appendChild(wrapper);
+  document.getElementById(id).appendChild(wrapper);
 };

@@ -6,7 +6,7 @@ import {
   loadVue,
 } from "./loaders";
 
-loadComponent("home");
+loadComponent(document, "home");
 loadReact();
 loadSolid();
 loadSvelte();
