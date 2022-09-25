@@ -1,13 +1,13 @@
 const elementId = "react-app";
 
-export const loadReact = () => {
+export default () => {
   const element = document.createElement("div");
   element.id = elementId;
   element.classList.add("container");
   document.getElementById("apps").appendChild(element);
 
   try {
-    require("react/App").default(elementId);
+    require("react-mfe/App").default(elementId);
   } catch (e) {
     console.error((e as Error).message);
     element.remove();

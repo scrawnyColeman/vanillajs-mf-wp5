@@ -1,9 +1,9 @@
 let count = 0;
 
-export const loadComponent = () => {
+export default (id: string) => {
   // build wrapper and inn
   const wrapper = document.createElement("div");
-  wrapper.id = "home";
+  wrapper.id = id;
   wrapper.classList.add("container");
 
   const element = document.createElement("div");

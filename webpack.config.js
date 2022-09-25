@@ -35,14 +35,16 @@ module.exports = (_, argv) => ({
 
   plugins: [
     new ModuleFederationPlugin({
-      name: "vanilla_host",
+      name: "vanilla_mfe",
       filename: "remoteEntry.js",
       remotes: {
-        react: "react_mfe@https://react-mf-wp5-rk86.vercel.app/remoteEntry.js",
-        vue: "vue_mfe@https://vue-mf-wp5-w9qx.vercel.app/remoteEntry.js",
-        svelte:
+        "react-mfe":
+          "react_mfe@https://react-mf-wp5-rk86.vercel.app/remoteEntry.js",
+        "vue-mfe": "vue_mfe@https://vue-mf-wp5-w9qx.vercel.app/remoteEntry.js",
+        "svelte-mfe":
           "svelte_mfe@https://svelte-mf-wp5-hl92.vercel.app/remoteEntry.js",
-        solid: "solid_mfe@https://solid-mf-wp5-zyhb.vercel.app/remoteEntry.js",
+        "solid-mfe":
+          "solid_mfe@https://solid-mf-wp5-zyhb.vercel.app/remoteEntry.js",
       },
       exposes: {},
       shared: {

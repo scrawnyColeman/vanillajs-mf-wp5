@@ -1,5 +1,5 @@
-export { loadComponent } from "./loadComponent";
-export { loadReact } from "./loadReact";
-export { loadSolid } from "./loadSolid";
-export { loadVue } from "./loadVue";
-export { loadSvelte } from "./loadSvelte";
+export { default as loadComponent } from "./loadComponent";
+export { default as loadReact } from "./loadReact";
+export { default as loadSolid } from "./loadSolid";
+export { default as loadVue } from "./loadVue";
+export { default as loadSvelte } from "./loadSvelte";
