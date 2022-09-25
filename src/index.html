@@ -5,12 +5,112 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <title>Vanilla Host App</title>
+    <style>
+      body {
+        font-family: Arial, Helvetica, sans-serif;
+        background-color: azure;
+      }
+
+      .container {
+        min-width: 250px;
+        flex-grow: 1;
+        flex-basis: 0;
+      }
+
+      #main-content {
+        width: 70%;
+        margin: 0 auto;
+      }
+
+      #loading {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: #17111c;
+      }
+
+      #apps {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1rem;
+        width: 100%;
+      }
+
+      #svg-spinner {
+        -webkit-transition-property: -webkit-transform;
+        -webkit-transition-duration: 1.2s;
+        -webkit-animation-name: rotate;
+        -webkit-animation-iteration-count: infinite;
+        -webkit-animation-timing-function: linear;
+
+        -moz-transition-property: -moz-transform;
+        -moz-animation-name: rotate;
+        -moz-animation-duration: 1.2s;
+        -moz-animation-iteration-count: infinite;
+        -moz-animation-timing-function: linear;
+
+        transition-property: transform;
+        transition-duration: 1.2s;
+        animation-name: rotate;
+        animation-duration: 1.2s;
+        animation-iteration-count: infinite;
+        animation-timing-function: linear;
+      }
+
+      @-webkit-keyframes rotate {
+        from {
+          -webkit-transform: rotate(0deg);
+        }
+        to {
+          -webkit-transform: rotate(360deg);
+        }
+      }
+
+      @-moz-keyframes rotate {
+        from {
+          -moz-transform: rotate(0deg);
+        }
+        to {
+          -moz-transform: rotate(360deg);
+        }
+      }
+
+      @keyframes rotate {
+        from {
+          transform: rotate(0deg);
+        }
+        to {
+          transform: rotate(360deg);
+        }
+      }
+    </style>
   </head>
-  <body
-    style="font-family: Arial, Helvetica, sans-serif; background-color: azure"
-  >
-    <div id="main-content" style="width: 70%; margin: 0 auto">
+  <body>
+    <div id="main-content">
       <h2>Host Application is built with HTML, CSS and JS</h2>
+      <div id="loading">
+        <svg
+          id="svg-spinner"
+          xmlns="http://www.w3.org/2000/svg"
+          width="48"
+          height="48"
+          viewBox="0 0 48 48"
+        >
+          <circle cx="24" cy="4" r="4" fill="currentColor" />
+          <circle cx="12.19" cy="7.86" r="3.7" fill="currentColor" />
+          <circle cx="5.02" cy="17.68" r="3.4" fill="currentColor" />
+          <circle cx="5.02" cy="30.32" r="3.1" fill="currentColor" />
+          <circle cx="12.19" cy="40.14" r="2.8" fill="currentColor" />
+          <circle cx="24" cy="44" r="2.5" fill="currentColor" />
+          <circle cx="35.81" cy="40.14" r="2.2" fill="currentColor" />
+          <circle cx="42.98" cy="30.32" r="1.9" fill="currentColor" />
+          <circle cx="42.98" cy="17.68" r="1.6" fill="currentColor" />
+          <circle cx="35.81" cy="7.86" r="1.3" fill="currentColor" />
+        </svg>
+      </div>
+      <div id="apps"></div>
     </div>
   </body>
 </html>
