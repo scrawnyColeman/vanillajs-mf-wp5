@@ -15,7 +15,7 @@ export default (document: Document, id: string) => {
   element.style.boxSizing = "border-box";
   element.style.borderRadius = "20px";
   element.innerHTML = `
-    <h4 style="margin: 0 0 1rem 0;">A host component that is built with VanillaJS (not an MFE)</h4>
+    <h4 style="margin: 0 0 1rem 0;">A microfrontend that is built with VanillaJS</h4>
   `;
 
   // build button
