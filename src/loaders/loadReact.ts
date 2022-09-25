@@ -7,7 +7,7 @@ export default () => {
   document.getElementById("apps").appendChild(element);
 
   try {
-    require("react-mfe/App").default(elementId);
+    require("react-mfe/RenderApp").default(elementId);
   } catch (e) {
     console.error((e as Error).message);
     element.remove();
