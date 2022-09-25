@@ -46,7 +46,9 @@ module.exports = (_, argv) => ({
         "solid-mfe":
           "solid_mfe@https://solid-mf-wp5-zyhb.vercel.app/remoteEntry.js",
       },
-      exposes: {},
+      exposes: {
+        "./Component": "./src/loaders/loadComponent.ts",
+      },
       shared: {
         ...deps,
       },
